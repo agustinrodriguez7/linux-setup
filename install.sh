@@ -64,6 +64,13 @@ install_aws_cli () {
   rm -rf awscliv2.zip
 }
 
+install_terraform () {
+  wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg -y --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(. /etc/os-release && echo "$UBUNTU_CODENAME") main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+  sudo apt update && sudo apt install terraform
+
+}
+
 if [ "$#" -eq 0 ]; then
   echo "No parameters were passed."
   echo "Try to add a parameter like this: \"sh installation.sh golang node\""
@@ -95,6 +102,10 @@ for param in "$@"
     elif [ "$param" = "aws_cli" ];
     then
       install_aws_cli
+
+    elif [ "$param" = "terraform" ];
+    then
+      install_terraform
     fi
   done
 

@@ -14,3 +14,4 @@ Currently it supports this tools:
 - Kubectl
 - Git
 - AWS CLI v2
+- Terraform
