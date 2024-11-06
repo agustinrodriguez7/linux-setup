@@ -1,6 +1,7 @@
 # Linux Setup
-This is a script that will help you to install all the tools you need.
-It was designed and developed for MINT distros, being tested only in v20 - ulyana - XFCE.
+This is a script that will help you to install all the tools you need. \
+It was designed and developed for MINT distros, being tested in:
+- v20 - ulyana - XFCE.
 
 ## How to run?
 `sh install.sh <tool1> <tool2>`\
